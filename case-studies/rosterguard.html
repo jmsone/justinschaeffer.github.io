@@ -14,47 +14,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-900 font-sans antialiased">
+<body class="bg-slate-50 text-gray-900 font-sans antialiased">
 
-  <nav class="border-b border-gray-100">
+  <nav class="bg-slate-900 text-white">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="../index.html" class="text-lg font-semibold tracking-tight">Justin Schaeffer</a>
-      <div class="flex items-center gap-8 text-sm font-medium text-gray-600">
-        <a href="../case-studies.html" class="text-gray-900">Case Studies</a>
-        <a href="../projects.html" class="hover:text-gray-900 transition-colors">Projects</a>
-        <a href="../writing.html" class="hover:text-gray-900 transition-colors">Writing</a>
-        <a href="../about.html" class="hover:text-gray-900 transition-colors">About</a>
+      <a href="../index.html" class="text-lg font-semibold tracking-tight text-white">Justin Schaeffer</a>
+      <div class="flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="../case-studies.html" class="text-white">Case Studies</a>
+        <a href="../projects.html" class="hover:text-white transition-colors">Projects</a>
+        <a href="../writing.html" class="hover:text-white transition-colors">Writing</a>
+        <a href="../about.html" class="hover:text-white transition-colors">About</a>
       </div>
     </div>
   </nav>
 
   <main class="max-w-3xl mx-auto px-6 py-20">
 
-    <a href="../case-studies.html" class="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-8 inline-block">&larr; All Case Studies</a>
+    <a href="../case-studies.html" class="text-sm text-indigo-400 hover:text-indigo-600 transition-colors mb-8 inline-block">&larr; All Case Studies</a>
 
-    <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Vermillio (Self-Initiated) | 2026</p>
+    <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Self-Initiated Concept | 2026</p>
     <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">RosterGuard Productization</h1>
-    <p class="text-xl text-gray-500 mb-16">Wrote the strategy and investment brief to productize an internal ML tool into a self-serve enterprise product with $600K+ ARR potential at 20 clients.</p>
+    <p class="text-xl text-gray-500 mb-6">Wrote the strategy and investment brief to productize an internal ML tool into a self-serve enterprise product with $600K+ ARR potential at 20 clients.</p>
+    <div class="bg-amber-50 border border-amber-200 rounded-lg px-5 py-4 mb-16 text-sm text-amber-800">
+      <strong>Disclaimer:</strong> I do not work for Vermillio. This strategy brief was created independently as a self-initiated exercise to demonstrate my approach to 0-to-1 product decisions. All analysis is based on publicly available information.
+    </div>
 
     <div class="space-y-12 text-gray-700 leading-relaxed">
 
       <section>
-        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Context</h2>
-        <p>Vermillio is an AI content protection and licensing company backed by Sony Music. Their ML team built an internal tool called RosterGuard that monitors the internet for unauthorized AI voice clones of artists. Three enterprise clients (multi-artist labels and distribution companies) had been getting informal access to RosterGuard data through weekly rep check-ins. All three wanted more. None were paying for it.</p>
-        <p class="mt-4">I wrote this strategy brief on my own initiative during the interview process to demonstrate how I'd approach the productization opportunity.</p>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Context</h2>
+        <p>Vermillio is an AI content protection and licensing company backed by Sony Music. Based on publicly available information, I hypothesized that Vermillio likely had internal detection capabilities that could be productized for enterprise clients (labels, distributors) who need visibility into unauthorized AI use of their artist rosters. I called this concept "RosterGuard."</p>
+        <p class="mt-4">I wrote this strategy brief on my own initiative during the interview process to demonstrate how I'd approach a 0-to-1 productization opportunity. The scenario, product name, and specific details are my own construction, not based on any internal knowledge of Vermillio's tooling or client relationships.</p>
       </section>
 
       <section>
-        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Problem</h2>
-        <p>Enterprise clients needed real-time visibility into what was happening to their artist rosters, and they needed a documented record they could show artists and attorneys. Neither existed. They were relying on weekly screen-shares with Vermillio reps, which didn't scale and left no audit trail.</p>
-        <p class="mt-4">Meanwhile, Vermillio was leaving recurring revenue on the table at the moment when these clients were most likely to pay. The hard technology (fingerprinting pipeline, crawling infrastructure, confidence scoring) already existed. What was missing was the product wrapper that would let clients access it safely on their own.</p>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Problem</h2>
+        <p>The hypothetical scenario: enterprise clients need real-time visibility into what's happening to their artist rosters, plus a documented record they can show artists and attorneys. Without a self-serve product, this kind of information typically flows through manual rep check-ins, which doesn't scale and leaves no audit trail.</p>
+        <p class="mt-4">The strategic premise: if Vermillio has detection capabilities internally, there's likely recurring revenue being left on the table. The hard technology (detection, crawling, scoring) would already exist. What's missing is the product wrapper that lets clients access it safely on their own.</p>
       </section>
 
       <section>
-        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Approach</h2>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Approach</h2>
         <ul class="space-y-4">
           <li><strong>Framed the strategic opportunity.</strong> Vermillio's edge is in detection, not operations. The strategy I proposed: automate the ops layer so that detection advantage compounds. Near-term, grow client count without growing headcount. Medium-term, build switching costs as roster fingerprints and audit histories accumulate. Long-term, reposition from service vendor to infrastructure.</li>
-          <li><strong>Scoped a phased build.</strong> Phase 1: discovery and architecture assessment (2-4 dev-weeks). Phase 2: build and closed pilot with the three existing clients. Phase 3: general release, contingent on pilot performance. Each phase had explicit gates and go/no-go criteria.</li>
+          <li><strong>Scoped a phased build.</strong> Phase 1: discovery and architecture assessment (2-4 dev-weeks). Phase 2: build and closed pilot with early adopter clients. Phase 3: general release, contingent on pilot performance. Each phase had explicit gates and go/no-go criteria.</li>
           <li><strong>Defined what not to build.</strong> Client-initiated takedowns without Vermillio approval (liability risk), API access before multi-tenancy hardened (security risk), and net-new analytics nobody had asked for (feature bloat). The non-goals were as important as the scope.</li>
           <li><strong>Built the revenue model.</strong> Per-seat license ($50/mo) plus per-monitored-talent fee ($8-10/artist/mo). At assumed adoption rates: $30-35K ARR per client, scaling to $600-700K at 20 clients. Engineering cost is fixed; revenue scales.</li>
           <li><strong>Named the risks explicitly.</strong> Cross-client data exposure as highest priority (label trade secrets). Multi-tenancy complexity as biggest timeline variable. Client willingness to pay vs. loving free access. Platform dependency for crawling infrastructure.</li>
@@ -62,17 +65,17 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Key Decisions in the Brief</h2>
-        <div class="bg-gray-50 rounded-lg p-6 space-y-4">
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Key Decisions in the Brief</h2>
+        <div class="bg-indigo-50/50 rounded-lg p-6 space-y-4">
           <div>
             <p class="font-semibold text-gray-900">Ask for Phase 1 only, not the full build.</p>
             <p class="text-sm text-gray-600 mt-1">Commit 2-4 dev-weeks for discovery and architecture assessment. Return with client commitments and engineering estimates before asking for the full investment. Reduces decision risk for leadership.</p>
           </div>
-          <div class="border-t border-gray-200 pt-4">
+          <div class="border-t border-indigo-100 pt-4">
             <p class="font-semibold text-gray-900">Hard gate on false positive rate before client-facing launch.</p>
             <p class="text-sm text-gray-600 mt-1">Alert feed doesn't go live until false positive rate is at or below 20%. A client acting on a bad alert could expose Vermillio to legal liability and destroy trust.</p>
           </div>
-          <div class="border-t border-gray-200 pt-4">
+          <div class="border-t border-indigo-100 pt-4">
             <p class="font-semibold text-gray-900">No client-initiated takedowns in v1.</p>
             <p class="text-sm text-gray-600 mt-1">Clients submit takedown requests; Vermillio reviews and approves. Revisit in v2 with legal review and a 95%+ confidence threshold gate.</p>
           </div>
@@ -80,24 +83,24 @@
       </section>
 
       <section>
-        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Outcome</h2>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Outcome</h2>
         <p>This was a self-initiated deliverable during the interview process. The brief structured the productization opportunity, revenue model, phased approach, and risk management in a format ready for a stakeholder alignment meeting. It demonstrates how I approach ambiguous 0-to-1 product decisions: start with the strategic frame, scope tightly, define what you won't build, name the risks, and ask for the smallest commitment that validates the next step.</p>
       </section>
 
       <section>
-        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">What I'd do differently</h2>
-        <p>If I were doing this with full access to Vermillio's internal data, I'd spend more time on the multi-tenancy assessment upfront. The brief flags it as the biggest timeline variable, but in practice, a PM should have a working relationship with the engineering team's assessment before the stakeholder meeting. I'd also want actual client interview data rather than working from second-hand signals about willingness to pay.</p>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">What I'd do differently</h2>
+        <p>The obvious limitation is that this was built without access to Vermillio's actual internal data, tooling, or client relationships. With real access, I'd validate every assumption: Does the detection capability exist in a productizable form? What's the actual multi-tenancy complexity? Do enterprise clients have willingness to pay, or do they expect this bundled? The brief is designed to be stress-tested against reality, not to be taken as-is.</p>
       </section>
 
     </div>
   </main>
 
-  <footer class="border-t border-gray-100 mt-20">
-    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm text-gray-400">
+  <footer class="bg-slate-900 text-slate-400 mt-20">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm">
       <span>Justin Schaeffer</span>
       <div class="flex items-center gap-6">
-        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-gray-600 transition-colors">LinkedIn</a>
-        <a href="mailto:justin.michael.schaeffer@gmail.com" class="hover:text-gray-600 transition-colors">Email</a>
+        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="mailto:justin.michael.schaeffer@gmail.com" class="hover:text-white transition-colors">Email</a>
       </div>
     </div>
   </footer>

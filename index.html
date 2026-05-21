@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Justin Schaeffer — Senior Product Manager</title>
-  <meta name="description" content="Senior Product Manager building data-intensive products in regulated environments. Portfolio of case studies, projects, and writing.">
+  <title>Justin Schaeffer — Product Manager in Pittsburgh</title>
+  <meta name="description" content="Product Manager in Pittsburgh. I build products that improve people's lives through data, design, and measurable outcomes.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwindcss.config = {
@@ -21,28 +21,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-900 font-sans antialiased">
+<body class="bg-slate-50 text-gray-900 font-sans antialiased">
 
   <!-- Nav -->
-  <nav class="border-b border-gray-100">
+  <nav class="bg-slate-900 text-white">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="text-lg font-semibold tracking-tight">Justin Schaeffer</a>
-      <div class="flex items-center gap-8 text-sm font-medium text-gray-600">
-        <a href="case-studies.html" class="hover:text-gray-900 transition-colors">Case Studies</a>
-        <a href="projects.html" class="hover:text-gray-900 transition-colors">Projects</a>
-        <a href="writing.html" class="hover:text-gray-900 transition-colors">Writing</a>
-        <a href="about.html" class="hover:text-gray-900 transition-colors">About</a>
+      <a href="index.html" class="text-lg font-semibold tracking-tight text-white">Justin Schaeffer</a>
+      <div class="flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="case-studies.html" class="hover:text-white transition-colors">Case Studies</a>
+        <a href="projects.html" class="hover:text-white transition-colors">Projects</a>
+        <a href="writing.html" class="hover:text-white transition-colors">Writing</a>
+        <a href="about.html" class="hover:text-white transition-colors">About</a>
       </div>
     </div>
   </nav>
 
+  <!-- Pittsburgh Banner -->
+  <div class="h-32 md:h-40 overflow-hidden relative">
+    <img src="pittsburgh-bridge.jpg" alt="10th Street Bridge, Pittsburgh" class="w-full h-full object-cover object-center">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/30 to-slate-50"></div>
+  </div>
+
   <!-- Hero -->
   <main>
-    <section class="max-w-5xl mx-auto px-6 pt-24 pb-20">
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-20">
       <div class="grid md:grid-cols-3 gap-12 items-start">
         <div class="md:col-span-2">
           <h1 class="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
-            Senior Product Manager
+            Product Manager<br>in Pittsburgh
           </h1>
           <p class="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl">
             I build products that improve people's lives. Whether it's helping employees save for retirement or giving artists control over their work, I use data to find the real problems and ship solutions that drive measurable outcomes.
@@ -60,33 +66,39 @@
     </section>
 
     <!-- Featured Work -->
-    <section class="border-t border-gray-100 bg-gray-50/50">
+    <section class="border-t border-gray-100 bg-white">
       <div class="max-w-5xl mx-auto px-6 py-20">
-        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-10">Case Studies</h2>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-10">Case Studies</h2>
         <div class="grid md:grid-cols-2 gap-8">
 
-          <a href="case-studies/employee-data-alerts.html" class="group block bg-white rounded-lg p-8 border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
+          <a href="case-studies/employee-data-alerts.html" class="group block bg-white rounded-lg p-8 border border-gray-100 hover:border-indigo-200 hover:shadow-sm transition-all">
             <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Human Interest</p>
             <h3 class="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">Employee Data Alerts</h3>
             <p class="text-sm text-gray-600 leading-relaxed">Built the platform's first automated data quality product. Reduced incoming data discrepancies 28% across 1M+ daily records.</p>
           </a>
 
-          <a href="case-studies/secure-2-auto-enrollment.html" class="group block bg-white rounded-lg p-8 border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
+          <a href="case-studies/secure-2-auto-enrollment.html" class="group block bg-white rounded-lg p-8 border border-gray-100 hover:border-indigo-200 hover:shadow-sm transition-all">
             <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Human Interest</p>
             <h3 class="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">SECURE 2.0 Auto-Enrollment</h3>
             <p class="text-sm text-gray-600 leading-relaxed">Made the product call to retroactively auto-enroll 40K eligible employees. Grew plan participation to 67% and delivered $3.2M ARR.</p>
           </a>
 
-          <a href="case-studies/bossa-nova-operations.html" class="group block bg-white rounded-lg p-8 border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
+          <a href="case-studies/bossa-nova-kpi-tree.html" class="group block bg-white rounded-lg p-8 border border-gray-100 hover:border-indigo-200 hover:shadow-sm transition-all">
             <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Bossa Nova Robotics</p>
-            <h3 class="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">Operations Efficiency</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">Founded the Data Health team. Built an investigative framework using robot telemetry that drove 25% improvement in core customer metrics.</p>
+            <h3 class="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">KPI Tree &amp; Customer Outcomes</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Built a KPI tree that shifted the company from technical robot metrics to customer business outcomes. 25% improvement in core metrics.</p>
           </a>
 
-          <a href="case-studies/rosterguard.html" class="group block bg-white rounded-lg p-8 border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
-            <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Vermillio (Self-Initiated)</p>
+          <a href="case-studies/bossa-nova-operations.html" class="group block bg-white rounded-lg p-8 border border-gray-100 hover:border-indigo-200 hover:shadow-sm transition-all">
+            <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Bossa Nova Robotics</p>
+            <h3 class="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">Operational Efficiency</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Founded Data Health team. Improved case routing, doubled technician capacity, saved $450K/yr.</p>
+          </a>
+
+          <a href="case-studies/rosterguard.html" class="group block bg-white rounded-lg p-8 border border-gray-100 hover:border-indigo-200 hover:shadow-sm transition-all">
+            <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Self-Initiated Concept</p>
             <h3 class="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">RosterGuard Productization</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">Wrote the strategy and investment brief to productize an internal ML tool into a self-serve enterprise product with $600K+ ARR potential.</p>
+            <p class="text-sm text-gray-600 leading-relaxed">Self-initiated strategy brief to productize an ML tool into a self-serve enterprise product with $600K+ ARR potential.</p>
           </a>
 
         </div>
@@ -96,7 +108,7 @@
     <!-- Projects -->
     <section class="border-t border-gray-100">
       <div class="max-w-5xl mx-auto px-6 py-20">
-        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-10">Side Projects</h2>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-10">Side Projects</h2>
         <div class="grid md:grid-cols-3 gap-8">
 
           <a href="projects/ai-coaching-system.html" class="group block">
@@ -120,12 +132,12 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-gray-100">
-    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm text-gray-400">
+  <footer class="bg-slate-900 text-slate-400">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm">
       <span>Justin Schaeffer</span>
       <div class="flex items-center gap-6">
-        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-gray-600 transition-colors">LinkedIn</a>
-        <a href="mailto:justin.michael.schaeffer@gmail.com" class="hover:text-gray-600 transition-colors">Email</a>
+        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="mailto:justin.michael.schaeffer@gmail.com" class="hover:text-white transition-colors">Email</a>
       </div>
     </div>
   </footer>

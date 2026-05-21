@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KPI Tree &amp; Customer Outcomes — Justin Schaeffer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-gray-900 font-sans antialiased">
+
+  <nav class="bg-slate-900 text-white">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-semibold tracking-tight text-white">Justin Schaeffer</a>
+      <div class="flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="../case-studies.html" class="text-white">Case Studies</a>
+        <a href="../projects.html" class="hover:text-white transition-colors">Projects</a>
+        <a href="../writing.html" class="hover:text-white transition-colors">Writing</a>
+        <a href="../about.html" class="hover:text-white transition-colors">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-20">
+
+    <a href="../case-studies.html" class="text-sm text-indigo-400 hover:text-indigo-600 transition-colors mb-8 inline-block">&larr; All Case Studies</a>
+
+    <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Bossa Nova Robotics | 2019-2020</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">KPI Tree &amp; Customer Outcomes</h1>
+    <p class="text-xl text-gray-500 mb-16">Built a KPI tree that shifted the entire company's focus from technical robot metrics to customer business outcomes. Drove 25% improvement in core customer metrics and redirected the product roadmap.</p>
+
+    <div class="space-y-12 text-gray-700 leading-relaxed">
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Context</h2>
+        <p>Bossa Nova Robotics deployed AI-powered inventory robots in major retail stores, scanning shelves to identify out-of-stock products and misplaced inventory. Customers used this data to make staffing and supply chain decisions. But customers tended to focus on AI accuracy, and BNR's internal teams each tracked different technical metrics. There was no alignment across the company on what mattered.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Problem</h2>
+        <p>Neither BNR nor its customers understood how the product drove value at the store level. Engineering optimized for technical AI metrics like precision and recall. We'd even built those into our pilot success criteria. Customers focused on AI accuracy too, but couldn't evaluate the business value BNR's data actually created.</p>
+        <p class="mt-4">This created a cycle: BNR measured success with technical metrics that didn't map to customer outcomes, different departments optimized for different internal metrics, and there was no shared framework connecting what the robot did to what the customer got. Nobody could tell which technical improvements translated to customer value and which didn't.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Approach</h2>
+        <ul class="space-y-4">
+          <li><strong>Collaborated with customers to define value-driven metrics.</strong> Worked directly with retail customers to identify the business outcomes they cared about and build new metrics that both sides could track. This was a departure from BNR's previous approach of defining metrics internally.</li>
+          <li><strong>Built a KPI tree mapping BNR metrics to customer outcomes.</strong> Identified nil pick rate (percentage of time a store employee couldn't find a product on the first try) as the key customer business outcome. Mapped scan completion rate and scan frequency as the top-level product metrics that fed it. This created a clear hierarchy: technical improvements only mattered if they moved scan completion and frequency, which only mattered if they reduced nil picks for the retailer.</li>
+          <li><strong>Ran correlation analysis to validate the relationships.</strong> Used robot telemetry, sensor data, and customer outcome data to test which BNR metrics actually correlated with customer results. Found medium correlation in specific areas, which revealed where BNR could make a real impact and where technical improvements weren't moving the needle.</li>
+          <li><strong>Communicated impact back to customers and across BNR.</strong> Built reporting that showed customers how BNR improvements affected their metrics. Internally, used the KPI tree to align different departments around shared outcomes and shift roadmap prioritization from "what can the robot do next" to "what drives the most customer value."</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Outcome</h2>
+        <div class="grid grid-cols-3 gap-6">
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">18%</p>
+            <p class="text-sm text-gray-500 mt-1">Reduction in nil picks (key customer outcome)</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">25%</p>
+            <p class="text-sm text-gray-500 mt-1">Improvement in scan completion and scan frequency</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">Roadmap shift</p>
+            <p class="text-sm text-gray-500 mt-1">From feature expansion to reliability and data quality</p>
+          </div>
+        </div>
+        <p class="mt-6">The KPI tree became the shared language for product decisions across the company. Instead of debating which features to build next, teams could point to which customer outcomes needed improvement and trace back to the technical investments that would move them.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">What I'd do differently</h2>
+        <p>The roadmap redirection was the right call, but I could have brought engineering leadership into the data story earlier. They eventually agreed that reliability and data quality mattered more than feature expansion, but earlier alignment would have saved about a month of advocacy. When you're asking a team to change what they're building, the data needs to land with the people making technical decisions, not just product leadership.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 mt-20">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm">
+      <span>Justin Schaeffer</span>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="mailto:justin.michael.schaeffer@gmail.com" class="hover:text-white transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
