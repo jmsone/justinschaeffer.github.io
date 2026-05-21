@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI PM Coaching System — Justin Schaeffer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+  <nav class="border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-semibold tracking-tight">Justin Schaeffer</a>
+      <div class="flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="../case-studies.html" class="hover:text-gray-900 transition-colors">Case Studies</a>
+        <a href="../projects.html" class="text-gray-900">Projects</a>
+        <a href="../writing.html" class="hover:text-gray-900 transition-colors">Writing</a>
+        <a href="../about.html" class="hover:text-gray-900 transition-colors">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-20">
+
+    <a href="../projects.html" class="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-8 inline-block">&larr; All Projects</a>
+
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">AI PM Coaching System</h1>
+    <p class="text-xl text-gray-500 mb-16">A 7-agent architecture that curates 20+ PM newsletters, filters by competency gaps, and generates portfolio artifacts. 90% reduction in weekly research time.</p>
+
+    <div class="space-y-12 text-gray-700 leading-relaxed">
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">The Problem</h2>
+        <p>Everyone tells PMs to "read newsletters and listen to podcasts." Nobody tells you which ones, how to filter signal from noise, or how to actually retain and apply what you learn.</p>
+        <p class="mt-4">I was subscribed to 8 newsletters and 8 podcasts. Some weeks I spent 2+ hours reading everything. Other weeks, nothing. Even when I did read, I wasn't retaining much. I was trying to solve a curation problem with willpower. That doesn't scale.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">The Insight</h2>
+        <p>I started by doing a rigorous self-assessment using the 9-Signal PM Competency Framework (Jackie Bavaro and Gayle McDowell). I scored 11/18, with 7 specific competency gaps. That changed everything. Instead of "help me be a better PM" (vague), I could target: Business Fundamentals, Technology Strategy, Influence and Presence.</p>
+        <p class="mt-4">And most of my newsletter subscriptions focused on Product Development and Innovation, my strongest areas. I was reinforcing what I already knew while ignoring my actual gaps.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Architecture</h2>
+        <div class="bg-gray-50 rounded-lg p-6 font-mono text-sm text-gray-700 space-y-4">
+          <div>
+            <p class="font-semibold text-gray-900 font-sans text-xs uppercase tracking-wider mb-2">Input Layer (Automated)</p>
+            <p>Newsletters arrive at Gmail</p>
+            <p>Zapier detects label, AI summarizes (2000 words to 300)</p>
+            <p>Appends to Notion weekly page</p>
+            <p class="text-gray-500">Result: 85-90% data reduction</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4">
+            <p class="font-semibold text-gray-900 font-sans text-xs uppercase tracking-wider mb-2">Analysis Layer (15-20 min/week)</p>
+            <p>Part 1: Web search digest (trends in gap areas)</p>
+            <p>Part 2: Newsletter analysis (filtered by priorities)</p>
+            <p>Part 3: Podcast curation (2-3 best episodes)</p>
+            <p>Part 4: Learning Log (insights mapped to competencies)</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4">
+            <p class="font-semibold text-gray-900 font-sans text-xs uppercase tracking-wider mb-2">Output Layer</p>
+            <p>Weekly: Learning Log entry</p>
+            <p>Monthly: Deep dive + portfolio artifact</p>
+            <p>Quarterly: Competency reassessment</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">The 7 Coaching Agents</h2>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="flex gap-4 items-start">
+            <span class="text-sm font-semibold text-gray-400 mt-0.5 w-4 flex-shrink-0">1.</span>
+            <div><strong>Data Analytics Coach</strong> — Metrics, KPI trees, experiment design, cohort analysis</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-sm font-semibold text-gray-400 mt-0.5 w-4 flex-shrink-0">2.</span>
+            <div><strong>AI Product Specialist</strong> — AI features, LLM products, prompt engineering, Day 2 ops</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-sm font-semibold text-gray-400 mt-0.5 w-4 flex-shrink-0">3.</span>
+            <div><strong>Career Strategist</strong> — Interview prep, portfolio building, resume optimization</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-sm font-semibold text-gray-400 mt-0.5 w-4 flex-shrink-0">4.</span>
+            <div><strong>Executive Communication Coach</strong> — Pyramid Principle, BLUF, stakeholder management</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-sm font-semibold text-gray-400 mt-0.5 w-4 flex-shrink-0">5.</span>
+            <div><strong>Strategy and Vision Coach</strong> — Strategy memos, The Three Bets, trade-offs</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-sm font-semibold text-gray-400 mt-0.5 w-4 flex-shrink-0">6.</span>
+            <div><strong>Business and Finance Coach</strong> — P&L literacy, unit economics, investment cases</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-sm font-semibold text-gray-400 mt-0.5 w-4 flex-shrink-0">7.</span>
+            <div><strong>Product Launch and GTM Expert</strong> — Go-to-market, positioning, pricing</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Key Design Decisions</h2>
+        <ul class="space-y-4">
+          <li><strong>Summarize at ingestion, not analysis.</strong> 20 newsletters at 2000 words each = 40,000 words/week. AI tools can't process that in a single analysis pass. Reducing to 300-word summaries at the Zapier step (85% data reduction) made everything downstream viable.</li>
+          <li><strong>60/40 gap-to-strength split.</strong> I almost made the mistake of focusing 100% on gaps. That would have let my strengths atrophy. 60% of weekly insights address gaps, 40% maintain competitive advantages in Product Development and Analytics.</li>
+          <li><strong>Artifact-oriented learning.</strong> Every Learning Log entry has an "Application" field and "Next Step" field. This forces connection to real work and portfolio creation. Without it, I'd consume content endlessly without demonstrating mastery.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Results</h2>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">90%</p>
+            <p class="text-sm text-gray-500 mt-1">Reduction in weekly research time</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">85%</p>
+            <p class="text-sm text-gray-500 mt-1">Data reduction at ingestion</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">15 min</p>
+            <p class="text-sm text-gray-500 mt-1">Weekly time investment</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">7</p>
+            <p class="text-sm text-gray-500 mt-1">Specialized coaching agents</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">What This Demonstrates</h2>
+        <ul class="space-y-2">
+          <li><strong>Systems thinking:</strong> Architected a scalable, automated solution to a messy problem</li>
+          <li><strong>AI fluency:</strong> Used AI at key automation points, not as a magic bullet</li>
+          <li><strong>Self-awareness:</strong> Identified gaps through rigorous assessment before building</li>
+          <li><strong>Data-driven approach:</strong> Metrics, tracking, and measurement throughout</li>
+        </ul>
+        <p class="mt-4">I wrote this up as a <a href="../writing.html" class="text-blue-600 hover:text-blue-800">Medium post</a> with the full technical implementation details.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-100 mt-20">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm text-gray-400">
+      <span>Justin Schaeffer</span>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-gray-600 transition-colors">LinkedIn</a>
+        <a href="mailto:justin.michael.schaeffer@gmail.com" class="hover:text-gray-600 transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Fit Analysis App — Justin Schaeffer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+  <nav class="border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-semibold tracking-tight">Justin Schaeffer</a>
+      <div class="flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="../case-studies.html" class="hover:text-gray-900 transition-colors">Case Studies</a>
+        <a href="../projects.html" class="text-gray-900">Projects</a>
+        <a href="../writing.html" class="hover:text-gray-900 transition-colors">Writing</a>
+        <a href="../about.html" class="hover:text-gray-900 transition-colors">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-20">
+
+    <a href="../projects.html" class="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-8 inline-block">&larr; All Projects</a>
+
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Job Fit Analysis App</h1>
+    <p class="text-xl text-gray-500 mb-16">Prototype that analyzes candidate-role fit, identifies skill gaps, and generates personalized learning paths optimized for time-to-value.</p>
+
+    <div class="space-y-12 text-gray-700 leading-relaxed">
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">The Problem</h2>
+        <p>Job seekers spend hours manually comparing their experience against job descriptions, often missing gaps they could close or strengths they should emphasize. The analysis is subjective, inconsistent, and doesn't scale across dozens of applications.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">What I Built</h2>
+        <p>A prototype that takes a candidate's resume and a job description, then uses 4 specialized AI agents to:</p>
+        <ul class="mt-4 space-y-2">
+          <li><strong>Analyze fit:</strong> Map candidate experience against role requirements</li>
+          <li><strong>Identify gaps:</strong> Surface specific skill and experience gaps with severity ratings</li>
+          <li><strong>Generate learning paths:</strong> Recommend real courses and resources optimized for time-to-value (close the gap fastest)</li>
+          <li><strong>Prioritize:</strong> Rank gaps by how much they affect fit score, so candidates focus on what moves the needle most</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Tech Stack</h2>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="font-semibold text-gray-900 mb-1">Lovable</p>
+            <p class="text-sm text-gray-600">Front-end development and UI</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="font-semibold text-gray-900 mb-1">Relevance.AI</p>
+            <p class="text-sm text-gray-600">4 specialized agent orchestration</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">What This Demonstrates</h2>
+        <ul class="space-y-2">
+          <li><strong>AI prototyping speed:</strong> Built a working prototype using no-code/low-code AI tools</li>
+          <li><strong>Multi-agent architecture:</strong> Designed 4 agents with distinct roles working together</li>
+          <li><strong>Product thinking:</strong> Focused on time-to-value as the core metric for learning recommendations</li>
+          <li><strong>Eating my own cooking:</strong> Built this to solve my own job search problem, then generalized</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-100 mt-20">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm text-gray-400">
+      <span>Justin Schaeffer</span>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-gray-600 transition-colors">LinkedIn</a>
+        <a href="mailto:justin.michael.schaeffer@gmail.com" class="hover:text-gray-600 transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

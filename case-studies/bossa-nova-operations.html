@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operations Efficiency — Justin Schaeffer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+  <nav class="border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-semibold tracking-tight">Justin Schaeffer</a>
+      <div class="flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="../case-studies.html" class="text-gray-900">Case Studies</a>
+        <a href="../projects.html" class="hover:text-gray-900 transition-colors">Projects</a>
+        <a href="../writing.html" class="hover:text-gray-900 transition-colors">Writing</a>
+        <a href="../about.html" class="hover:text-gray-900 transition-colors">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-20">
+
+    <a href="../case-studies.html" class="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-8 inline-block">&larr; All Case Studies</a>
+
+    <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Bossa Nova Robotics | 2019-2020</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Operations Efficiency</h1>
+    <p class="text-xl text-gray-500 mb-16">Founded the Data Health team and built an investigative framework that drove 25% improvement in core customer metrics and doubled technician fleet capacity.</p>
+
+    <div class="space-y-12 text-gray-700 leading-relaxed">
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Context</h2>
+        <p>Bossa Nova Robotics deployed AI-powered inventory robots in major retail stores. The robots autonomously navigated store aisles, scanning shelves to identify out-of-stock products and misplaced inventory. The product promise was simple: give retailers real-time visibility into what's on their shelves. The operational reality was much messier.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Problem</h2>
+        <p>Unknown operational failures were degrading customer-facing metrics, and nobody had a systematic way to find them. Robot telemetry data, sensor readings, and customer outcome data all lived in different places. When a robot failed a scan or produced bad data, it wasn't clear whether the root cause was hardware, software, environmental, or operational. Issues surfaced as customer complaints, not as proactive diagnostics.</p>
+        <p class="mt-4">The company was scaling its fleet without understanding why some robots and some stores performed significantly worse than others.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Approach</h2>
+        <ul class="space-y-4">
+          <li><strong>Founded the Data Health team.</strong> This was a cross-functional team I created and led. Its purpose was to surface unknown operational failures before customers felt them. No one had owned this problem before.</li>
+          <li><strong>Built an investigative framework.</strong> Combined robot telemetry, sensor data, and customer outcome data to diagnose root causes of performance variation. This framework turned vague "something's wrong" signals into specific, actionable findings.</li>
+          <li><strong>Uncovered hidden correlations.</strong> Analyzed telemetry patterns and found specific failure modes that correlated directly with customer-facing outcomes like uptime and out-of-stock identification accuracy. These weren't obvious from any single data source.</li>
+          <li><strong>Redirected the product roadmap.</strong> Used findings to shift roadmap priorities toward data capture and autonomy improvements. This was a significant change: the team had been focused on feature expansion, but the data showed that reliability and data quality had more impact on customer metrics.</li>
+          <li><strong>Scaled operations without headcount.</strong> Analyzed case management data and implemented new routing systems that doubled technician capacity from 24 to 48 robots per technician.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Outcome</h2>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">25%</p>
+            <p class="text-sm text-gray-500 mt-1">Improvement in core customer metrics</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">18%</p>
+            <p class="text-sm text-gray-500 mt-1">Reduction in fulfillment failures</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">2x</p>
+            <p class="text-sm text-gray-500 mt-1">Technician capacity (24 to 48 robots)</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">$450K/yr</p>
+            <p class="text-sm text-gray-500 mt-1">Operational savings from InOrbit rollout</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">What I'd do differently</h2>
+        <!-- TODO: Justin to fill in reflection -->
+        <p class="text-gray-400 italic">Coming soon. I'm writing up what I learned about building data-driven operational practices in a hardware/software company with significant ambiguity.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-100 mt-20">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm text-gray-400">
+      <span>Justin Schaeffer</span>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-gray-600 transition-colors">LinkedIn</a>
+        <a href="mailto:justin.michael.schaeffer@gmail.com" class="hover:text-gray-600 transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

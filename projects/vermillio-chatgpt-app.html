@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vermillio ChatGPT App — Justin Schaeffer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+  <nav class="border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-semibold tracking-tight">Justin Schaeffer</a>
+      <div class="flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="../case-studies.html" class="hover:text-gray-900 transition-colors">Case Studies</a>
+        <a href="../projects.html" class="text-gray-900">Projects</a>
+        <a href="../writing.html" class="hover:text-gray-900 transition-colors">Writing</a>
+        <a href="../about.html" class="hover:text-gray-900 transition-colors">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-20">
+
+    <a href="../projects.html" class="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-8 inline-block">&larr; All Projects</a>
+
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Vermillio ChatGPT App</h1>
+    <p class="text-xl text-gray-500 mb-4">Product brief for a ChatGPT integration that turns high-intent creator protection queries into a discovery and conversion channel.</p>
+    <p class="text-sm text-gray-400 mb-16">Status: Concept / Early Exploration</p>
+
+    <div class="space-y-12 text-gray-700 leading-relaxed">
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Core Insight</h2>
+        <p>Artists frequently ask ChatGPT questions like "How do I protect my art from AI?" That's a high-intent signal. 800M+ weekly active users, and some meaningful percentage of them are creators worried about unauthorized AI use of their work.</p>
+        <p class="mt-4">Vermillio solves this problem (detection, takedowns, licensing). But creators need to find Vermillio first. A ChatGPT app integration creates a natural discovery channel: show immediate value (scan results), then convert to Vermillio's protection and licensing products.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Dual Value Proposition</h2>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="font-semibold text-gray-900 mb-2">Protection Path</p>
+            <p class="text-sm text-gray-600">"Stop them from using my work"</p>
+            <p class="text-xs text-gray-400 mt-2">Takedowns, monitoring</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <p class="font-semibold text-gray-900 mb-2">Licensing Path</p>
+            <p class="text-sm text-gray-600">"Let me profit from AI using my art"</p>
+            <p class="text-xs text-gray-400 mt-2">Smart contracts, revenue share</p>
+          </div>
+        </div>
+        <p class="mt-4">The framing: AI isn't just a threat. It's a revenue stream if you set it up right. Both paths lead to the same app experience but with different emphasis.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Core Flows</h2>
+        <div class="space-y-8">
+          <div>
+            <h3 class="font-semibold mb-3">Flow 1: Portfolio/Name Scan</h3>
+            <div class="bg-gray-50 rounded-lg p-4 font-mono text-sm space-y-1">
+              <p>User: "Is my work being used by AI?"</p>
+              <p class="text-gray-500">ChatGPT: "What's your name and portfolio link?"</p>
+              <p>User provides info</p>
+              <p class="text-gray-500">Vermillio scans (name/likeness matching)</p>
+              <p class="text-blue-600">Results: "We found X potential uses across AI platforms"</p>
+              <p class="text-gray-400">CTAs: [View Details] [Send Takedowns] [Set Up Licensing]</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-3">Flow 2: Specific File Upload</h3>
+            <div class="bg-gray-50 rounded-lg p-4 font-mono text-sm space-y-1">
+              <p>User: "Is anyone using this image?" + uploads file</p>
+              <p class="text-gray-500">Vermillio scans (fingerprint/hash matching)</p>
+              <p class="text-blue-600">Results: "This image appears in 2 AI training datasets"</p>
+              <p class="text-gray-400">CTAs: [Send Takedowns] [Register for Licensing]</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-3">Flow 3: Licensing Registration</h3>
+            <div class="bg-gray-50 rounded-lg p-4 font-mono text-sm space-y-1">
+              <p>User: "I want to license my art to AI companies"</p>
+              <p class="text-gray-500">Upload file, confirm ownership, set terms</p>
+              <p class="text-blue-600">Vermillio registers via smart contract</p>
+              <p class="text-gray-400">"Done. You'll be notified when requests come in."</p>
+            </div>
+            <p class="text-sm text-gray-500 mt-2">Key: This completes in chat. Matches the pattern of successful ChatGPT apps (DoorDash ordering, Expedia booking).</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Content Ownership Verification</h2>
+        <p>The critical risk: a bad actor uploads someone else's work and claims ownership. The recommended approach is a hybrid model:</p>
+        <ul class="mt-4 space-y-2">
+          <li><strong>Scan:</strong> Allow immediately with self-attestation (show value fast)</li>
+          <li><strong>Takedowns:</strong> Require portfolio link or social verification before sending</li>
+          <li><strong>Licensing:</strong> Require identity verification (similar to payment platforms)</li>
+        </ul>
+        <p class="mt-4">This preserves the "show value fast" moment while gating high-stakes actions behind appropriate verification.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Open Questions</h2>
+        <ul class="space-y-3">
+          <li><strong>Scan latency:</strong> Can results return fast enough for synchronous chat? If scans take minutes, the in-chat magic breaks.</li>
+          <li><strong>Creator audience size:</strong> What percentage of ChatGPT's 800M WAU are creators in Vermillio's target segments?</li>
+          <li><strong>Economics:</strong> Does Vermillio's transaction fee model work at individual artist scale, or is this primarily a top-of-funnel for enterprise?</li>
+          <li><strong>False positive rate:</strong> Showing "violations" that aren't real damages trust and could lead to improper takedowns.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">What This Demonstrates</h2>
+        <ul class="space-y-2">
+          <li><strong>Distribution thinking:</strong> Identified an untapped acquisition channel where intent already exists</li>
+          <li><strong>Product sense:</strong> Designed flows that show value before asking for commitment</li>
+          <li><strong>Risk awareness:</strong> Content ownership verification design, false positive management, platform dependency</li>
+          <li><strong>Technical grounding:</strong> MCP server tools, API integration points, widget concepts</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-gray-100 mt-20">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm text-gray-400">
+      <span>Justin Schaeffer</span>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-gray-600 transition-colors">LinkedIn</a>
+        <a href="mailto:justin.michael.schaeffer@gmail.com" class="hover:text-gray-600 transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
