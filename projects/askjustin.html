@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AskJustin — Justin Schaeffer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-gray-900 font-sans antialiased">
+
+  <nav class="bg-slate-900 text-white">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-semibold tracking-tight text-white">Justin Schaeffer</a>
+      <div class="flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="../case-studies.html" class="hover:text-white transition-colors">Case Studies</a>
+        <a href="../projects.html" class="text-white">Projects</a>
+        <a href="../writing.html" class="hover:text-white transition-colors">Writing</a>
+        <a href="../about.html" class="hover:text-white transition-colors">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-20">
+
+    <a href="../projects.html" class="text-sm text-indigo-400 hover:text-indigo-600 transition-colors mb-8 inline-block">&larr; All Projects</a>
+
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">AskJustin</h1>
+    <p class="text-xl text-gray-500 mb-8">A public AI agent trained on my real work stories, so hiring managers can ask questions a resume cannot answer.</p>
+    <p class="mb-16"><a href="https://ask.justinschaeffer.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium">Try it at ask.justinschaeffer.com &rarr;</a></p>
+
+    <div class="space-y-12 text-gray-700 leading-relaxed">
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">The Problem</h2>
+        <p>A resume gives you the outline of a career. It does not tell you how someone thinks, handles ambiguity, or actually builds. I have been in a job search since September 2025, and the resume-shaped conversation always felt lossy: skimmed by recruiters, pattern-matched by hiring managers, actual signal about how I think rarely making it through.</p>
+        <p class="mt-4">I built AskJustin to make some of that signal available before the first conversation. It also gives me a real portfolio case study to walk through in interviews, which turns out to matter as much as the tool itself.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">What It Is</h2>
+        <p>AskJustin is a public web page where hiring managers ask interview-style questions and get first-person answers grounded in specific projects, decisions, and philosophies from my career. Ask it anything you would ask in a first-round conversation: "Tell me about a time you had to make a decision with incomplete data." "How do you prioritize competing requests?" "What is the hardest product problem you have solved?"</p>
+        <p class="mt-4">If the corpus has relevant context, you get a grounded answer with specific details. If it does not, the agent says so honestly and suggests contacting me directly. No hallucination, no filler.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">How It Works</h2>
+        <p>AskJustin is a Retrieval-Augmented Generation (RAG) system. I wrote roughly 60 short stories about specific projects, decisions, and philosophies from my career. Each story is embedded into a vector using Voyage AI. When a question arrives, it is embedded the same way, and cosine similarity selects the six most relevant chunks. Those chunks plus a system prompt with strict grounding rules go to Claude Haiku 4.5, which drafts a first-person response streamed to the browser.</p>
+        <p class="mt-4">The guardrails do the heavy lifting. The system prompt bans general-knowledge fallback, invented details, and fabricated negatives. The agent can only speak from what I actually wrote.</p>
+
+        <div class="bg-slate-100 rounded-lg p-6 font-mono text-sm text-gray-700 space-y-4 mt-6">
+          <div>
+            <p class="font-semibold text-gray-900 font-sans text-xs uppercase tracking-wider mb-2">At Build Time</p>
+            <p>60 work stories &rarr; Voyage AI embeddings &rarr; JSON bundle shipped with app</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4">
+            <p class="font-semibold text-gray-900 font-sans text-xs uppercase tracking-wider mb-2">At Query Time</p>
+            <p>Question &rarr; embed &rarr; cosine similarity (top 6 chunks) &rarr; system prompt + chunks &rarr; Claude Haiku 4.5 &rarr; streamed response</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4">
+            <p class="font-semibold text-gray-900 font-sans text-xs uppercase tracking-wider mb-2">Guardrails</p>
+            <p>No general-knowledge fallback. No invented details. No fabricated negatives. Redirect to Justin when context is insufficient.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Tech Decisions and Trade-offs</h2>
+        <ul class="space-y-4">
+          <li><strong>Claude Haiku 4.5 over Sonnet.</strong> The task is retrieval and synthesis from a small corpus with a strong system prompt, not open-ended reasoning. Haiku is faster, cheaper, and quality-sufficient for this use case.</li>
+          <li><strong>Flat-file cosine similarity over a vector database.</strong> At 60 chunks, loading embeddings from a JSON file at build time is simpler, cheaper, and eliminates cold-start latency. A vector DB adds operational cost without adding value until the corpus grows past several hundred chunks.</li>
+          <li><strong>Voyage AI embeddings (voyage-3.5-lite).</strong> Best performance-per-dollar for semantic similarity at this scale. Separate embedding model from generation model lets each do what it does best.</li>
+          <li><strong>Streaming from day one.</strong> Waiting 3-5 seconds for a full response before showing anything kills perceived performance. Streaming was non-negotiable.</li>
+          <li><strong>Multi-tier rate limiting from day one.</strong> A public endpoint backed by a paid LLM API is a cost attack surface. Global daily cap, per-IP cap, and per-session turn cap protect against abuse without degrading legitimate use.</li>
+          <li><strong>Prompt caching.</strong> The static system prompt caches via Anthropic's ephemeral cache. Roughly 90% cost reduction on repeated queries. Under $1/month at 20 queries per day.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Stack</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="bg-indigo-50 rounded-lg p-4">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Framework</p>
+            <p class="text-sm font-medium text-gray-900">Next.js 16</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-4">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">LLM</p>
+            <p class="text-sm font-medium text-gray-900">Claude Haiku 4.5</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-4">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Embeddings</p>
+            <p class="text-sm font-medium text-gray-900">Voyage AI</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-4">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Hosting</p>
+            <p class="text-sm font-medium text-gray-900">Vercel</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-4">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Rate Limiting</p>
+            <p class="text-sm font-medium text-gray-900">Upstash Redis</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-4">
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Query Logging</p>
+            <p class="text-sm font-medium text-gray-900">Supabase</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">By the Numbers</h2>
+        <div class="grid grid-cols-3 gap-6">
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">~60</p>
+            <p class="text-sm text-gray-500 mt-1">Work stories in the corpus</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">&lt;$1</p>
+            <p class="text-sm text-gray-500 mt-1">Monthly cost at 20 queries/day</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">90%</p>
+            <p class="text-sm text-gray-500 mt-1">Cost reduction via prompt caching</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">6-8 wk</p>
+            <p class="text-sm text-gray-500 mt-1">Build timeline (Phase 1)</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">~5 hr</p>
+            <p class="text-sm text-gray-500 mt-1">Per week investment</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">Solo</p>
+            <p class="text-sm text-gray-500 mt-1">Built by a PM, not an engineer</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">What is Next</h2>
+        <p>Phase 2 adds a formal evaluation framework: automated testing of retrieval quality, response grounding, and edge-case behavior. Right now quality assurance is manual review. A proper eval suite makes the system trustworthy at scale and gives me a repeatable methodology to discuss in interviews.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">What This Demonstrates</h2>
+        <ul class="space-y-2">
+          <li><strong>End-to-end AI product ownership:</strong> Architecture, retrieval design, prompt engineering, deployment, security, cost modeling</li>
+          <li><strong>Technical judgment:</strong> Every decision is documented and defensible, with alternatives considered</li>
+          <li><strong>Cost discipline:</strong> Under $1/month through intentional model selection, prompt caching, and right-sized infrastructure</li>
+          <li><strong>Security thinking:</strong> Rate limiting and abuse defense designed in from day one, not bolted on</li>
+          <li><strong>Honest limits:</strong> The agent says "I do not know" rather than hallucinating. That restraint is a product decision.</li>
+        </ul>
+        <p class="mt-6">I am a product manager, not a career engineer. Building an AI product end-to-end as a PM is itself a demonstration of the skills I claim to bring. The product demonstrates the product-management skills it is claiming to show.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Get in Touch</h2>
+        <p>If something in the agent's response surprises you, or if it sends you to my inbox, I would like to hear from you.</p>
+        <div class="flex items-center gap-6 mt-4">
+          <a href="mailto:justin.michael.schaeffer@gmail.com" class="text-blue-600 hover:text-blue-800 font-medium">Email</a>
+          <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 font-medium">LinkedIn</a>
+          <a href="https://ask.justinschaeffer.com" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-800 font-medium">Try AskJustin</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 mt-20">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm">
+      <span>Justin Schaeffer</span>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-white transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
