@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AskJustin — Justin Schaeffer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwindcss.config = {
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-gray-900 font-sans antialiased">
+
+  <nav class="bg-slate-900 text-white">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-lg font-semibold tracking-tight text-white">Justin Schaeffer</a>
+      <div class="flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="../case-studies.html" class="text-white">Case Studies</a>
+        <a href="../projects.html" class="hover:text-white transition-colors">Projects</a>
+        <a href="../writing.html" class="hover:text-white transition-colors">Writing</a>
+        <a href="../about.html" class="hover:text-white transition-colors">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-20">
+
+    <a href="../case-studies.html" class="text-sm text-indigo-400 hover:text-indigo-600 transition-colors mb-8 inline-block">&larr; All Case Studies</a>
+
+    <p class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">Personal Project | 2025-2026</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">AskJustin</h1>
+    <p class="text-xl text-gray-500 mb-4">A public AI agent trained on my real work stories, so hiring managers can ask questions a resume cannot answer.</p>
+    <p class="text-sm text-gray-400 mb-16">Solo project &middot; 6 weeks at ~5 hrs/week &middot; Live at <a href="https://ask.justinschaeffer.com" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-600 transition-colors">ask.justinschaeffer.com</a></p>
+
+    <div class="space-y-12 text-gray-700 leading-relaxed">
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">The Problem</h2>
+        <p>A resume gives you the outline of a career. It does not tell you how someone thinks, handles ambiguity, or actually builds. Two people feel that gap, and each makes it worse for the other.</p>
+        <p class="mt-4">The <strong>hiring manager</strong> reads resumes in 30 seconds. Judgment, ambiguity-tolerance, actual craft: none of it survives pattern-matching. By the time a real conversation happens, the manager has already decided whether to be curious or defensive.</p>
+        <p class="mt-4">The <strong>candidate</strong> (me) has been job-searching since September 2025. Strong roles evaporate at the recruiter screen, before anyone with domain judgment looks at the work. Every application is a bet that a resume is a good enough proxy for me. It is not.</p>
+        <p class="mt-4">What I knew going in came from two sources. First, direct experience: I had run dozens of applications and could see where signal was leaking. Second, a market observation: hiring managers were fatigued by AI-generated applications and newly skeptical of surface polish. I did not need user research to confirm the problem. I was the user, and my sample was every conversation I had had that quarter.</p>
+
+        <div class="bg-indigo-50 border-l-4 border-indigo-400 p-5 mt-6 rounded-r-lg">
+          <p class="text-sm font-semibold text-gray-900 mb-1">Key reframe</p>
+          <p class="text-sm text-gray-700">Building an AI product end-to-end IS the portfolio piece for a PM role. The product demonstrates the skills it claims to show. That reframe collapsed two projects into one: the job-search tool and the portfolio case study became the same object.</p>
+        </div>
+
+        <p class="mt-6"><a href="https://ask.justinschaeffer.com" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-600 transition-colors font-medium">Try it: ask.justinschaeffer.com &rarr;</a></p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">What I Explored and What I Cut</h2>
+        <p class="mb-6">The two most important design decisions on this project are things I did not build. Both were tempting. Both would have looked more sophisticated. Both would have made the product worse.</p>
+
+        <div class="bg-red-50 border-l-4 border-red-300 p-5 rounded-r-lg mb-4">
+          <p class="text-sm font-semibold text-gray-900 mb-2">Rejected: Persistent chatbot memory</p>
+          <p class="text-sm text-gray-700">The obvious 2026 pattern is a chatbot that remembers who you are, greets you back, threads context across sessions. It looks modern. It reads as product sophistication.</p>
+          <p class="text-sm text-gray-700 mt-2">I cut it for three reasons. <strong>Cost:</strong> persistent memory means longer context on every turn, which breaks the sub-$1/month economics and widens the abuse surface on a public endpoint tied to my personal API key. <strong>Fit:</strong> the audience is hiring managers doing a 3-to-8-turn evaluation, not returning users building a relationship. Optimizing for retention is optimizing for the wrong verb. <strong>Trust:</strong> a memory-ful agent quietly collecting behavioral data on hiring managers is a bad look for a candidate. Ephemeral is the honest default.</p>
+        </div>
+
+        <div class="bg-green-50 border-l-4 border-green-400 p-5 rounded-r-lg mb-6">
+          <p class="text-sm font-semibold text-gray-900 mb-2">Kept: 6-question session cap</p>
+          <p class="text-sm text-gray-700">Visible as a turn counter. It communicates "focused evaluation, not endless chat," and it caps cost exposure without introducing a paywall.</p>
+        </div>
+
+        <div class="bg-red-50 border-l-4 border-red-300 p-5 rounded-r-lg mb-4">
+          <p class="text-sm font-semibold text-gray-900 mb-2">Rejected: Letting the agent speculate</p>
+          <p class="text-sm text-gray-700">An LLM will happily answer any question. When a hiring manager asks about a project the corpus does not cover, the default behavior is to synthesize something plausible from adjacent context.</p>
+          <p class="text-sm text-gray-700 mt-2">I cut it hard. A single fabricated PM story blows up the entire premise. The agent's only defensible claim is that it speaks for me. The moment it starts inventing, that claim is false, and the case-study argument I am making with this product collapses.</p>
+        </div>
+
+        <div class="bg-green-50 border-l-4 border-green-400 p-5 rounded-r-lg mb-6">
+          <p class="text-sm font-semibold text-gray-900 mb-2">Kept: Explicit "I don't know" fallback</p>
+          <p class="text-sm text-gray-700">An "I do not have that in my context, contact Justin directly" response, engineered into the system prompt with concrete anti-patterns rather than abstract rules. "I don't know" became a first-class response, treated in the eval rubric as a passing behavior when appropriate.</p>
+        </div>
+
+        <div class="bg-indigo-50 border-l-4 border-indigo-400 p-5 rounded-r-lg">
+          <p class="text-sm font-semibold text-gray-900 mb-1">What connects the two rejections</p>
+          <p class="text-sm text-gray-700">Both were about resisting the pull of "more capable-looking is better." The product's real value is a narrow honesty contract with the hiring manager. Every feature that would have muddied that contract got cut, even the ones that would have improved the demo.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Constraints</h2>
+        <ul class="space-y-4">
+          <li><strong>Time:</strong> 5 hours per week. Real ceiling. Every scope decision had to survive an "is this worth 20% of a week's build budget" test.</li>
+          <li><strong>Cost:</strong> Near-zero. Target under $1/month at ~20 queries/day. Ruled out most vector DB options, heavier models on the default path, and forced prompt caching from day one.</li>
+          <li><strong>Timeline:</strong> 6-8 weeks to a usable V1. The job search was live. A portfolio piece that lands after the search ends is worthless.</li>
+          <li><strong>PM, not career engineer.</strong> Pushed the stack toward things I could reason about end-to-end, and away from architectures I would need a specialist to explain in an interview.</li>
+          <li><strong>Public endpoint, personal API key.</strong> Cost-attack surface from launch minute one. Multi-tier rate limiting had to ship in V1.</li>
+          <li><strong>Portfolio-worthy quality bar.</strong> Every technical and product decision had to be one I could defend in an interview conversation.</li>
+          <li><strong>Privacy of source material.</strong> No proprietary employer docs. Derivative story-format only, with a hard split between interview-prep originals and the shipped corpus.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Architecture and Stack</h2>
+        <div class="bg-white border border-gray-200 rounded-lg divide-y divide-gray-100">
+          <div class="p-4 flex items-start gap-4">
+            <span class="text-sm font-semibold text-gray-900 w-32 flex-shrink-0">Framework</span>
+            <span class="text-sm text-gray-700">Next.js 16 (App Router) on Vercel Hobby. Streaming LLM support is native. Deploy is a git push.</span>
+          </div>
+          <div class="p-4 flex items-start gap-4">
+            <span class="text-sm font-semibold text-gray-900 w-32 flex-shrink-0">Generation</span>
+            <span class="text-sm text-gray-700">Claude Haiku 4.5. Retrieval + synthesis over a curated corpus does not need Sonnet-level reasoning. Sonnet triples per-query cost for gains I could not reliably measure.</span>
+          </div>
+          <div class="p-4 flex items-start gap-4">
+            <span class="text-sm font-semibold text-gray-900 w-32 flex-shrink-0">Embeddings</span>
+            <span class="text-sm text-gray-700">Voyage AI voyage-3.5-lite. Anthropic does not ship an embeddings API. Voyage is the partner path, with a free tier that covers this project's lifetime.</span>
+          </div>
+          <div class="p-4 flex items-start gap-4">
+            <span class="text-sm font-semibold text-gray-900 w-32 flex-shrink-0">Retrieval</span>
+            <span class="text-sm text-gray-700">Flat-file cosine similarity, embeddings bundled with the app. Zero infra, zero cold-start. A vector DB is unjustified at 60 chunks and would be a resume-line choice, not an engineering one.</span>
+          </div>
+          <div class="p-4 flex items-start gap-4">
+            <span class="text-sm font-semibold text-gray-900 w-32 flex-shrink-0">Streaming</span>
+            <span class="text-sm text-gray-700">Vercel AI SDK. First token in under a second changes the perceived latency entirely.</span>
+          </div>
+          <div class="p-4 flex items-start gap-4">
+            <span class="text-sm font-semibold text-gray-900 w-32 flex-shrink-0">Rate Limiting</span>
+            <span class="text-sm text-gray-700">Upstash Redis: per-IP, per-session, and global daily cap.</span>
+          </div>
+          <div class="p-4 flex items-start gap-4">
+            <span class="text-sm font-semibold text-gray-900 w-32 flex-shrink-0">Query Logging</span>
+            <span class="text-sm text-gray-700">Supabase, RLS-locked, IP-hashed with a salt. Fire-and-forget. Real signal source for corpus iteration.</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">What I Designed</h2>
+        <p class="mb-4">Solo project. Every design decision is mine.</p>
+        <ul class="space-y-4">
+          <li><strong>The corpus.</strong> Roughly 60 short work stories in STAR format, one per file, metadata inline. Chunking by narrative unit rather than fixed token count. Two independent boundaries enforced at ingestion: privacy and factual accuracy.</li>
+          <li><strong>The grounding contract.</strong> System prompt engineered with concrete anti-patterns, not abstract rules. "If the retrieved chunks do not contain a specific dollar figure, do not produce one; say 'I don't have that in my context.'"</li>
+          <li><strong>The three starter chips.</strong> They set the register of the conversation, demonstrate the corpus's range in one glance, and lower activation energy for the first turn.</li>
+          <li><strong>The disclaimer copy.</strong> One sentence, visible below the composer at all times. Sets the honesty contract before the first token.</li>
+          <li><strong>The "How I built this" reveal.</strong> Progressive disclosure. Both audiences (just-ask vs. want-the-build-details) are first-class.</li>
+          <li><strong>The session cap and its framing.</strong> Six turns per session, shown as a counter, framed as "focused evaluation" rather than "you have been rate limited."</li>
+        </ul>
+        <p class="mt-6 text-sm text-gray-500">What I did not do personally: I used Claude Code as a coding assistant throughout the build. The judgment work was mine. The typing was assisted.</p>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">Post-Launch Results</h2>
+        <p class="mb-6 text-sm text-gray-500">Honest framing: site is soft-launched with noindex on. Intentionally not discoverable through search. Small sample by design.</p>
+
+        <h3 class="text-sm font-semibold text-gray-900 mb-3">Grounding drift (the failure mode being watched)</h3>
+        <div class="bg-amber-50 border border-amber-200 rounded-lg px-5 py-4 mb-6 text-sm text-amber-800">
+          <strong>Pre-launch drift instance:</strong> "Tell me about a build-vs-buy decision" surfaced a coherent story with specific numbers ($400K in-house build cost, 2 engineers, 12-month timeline, $150K subscription, 4-month payback). Every number was fabricated at the story-bank layer. Root cause: plausible figures got baked in when the story bank was written. Fix: full corpus fact-audit before embed, and a policy that story-bank inheritance is not verification.
+        </div>
+
+        <h3 class="text-sm font-semibold text-gray-900 mb-3">Corpus gaps from real logs</h3>
+        <div class="grid grid-cols-3 gap-6 mb-6">
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">52</p>
+            <p class="text-sm text-gray-500 mt-1">Logged queries across 10 days</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">3</p>
+            <p class="text-sm text-gray-500 mt-1">Thin-retrieval gaps identified</p>
+          </div>
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <p class="text-3xl font-bold text-gray-900">0</p>
+            <p class="text-sm text-gray-500 mt-1">Post-launch fabrications detected</p>
+          </div>
+        </div>
+        <p>Three questions hit thin retrieval: compensation expectations, handling stakeholder resistance, working in controversial industries. These gaps were only visible from real usage, not from reading the corpus. Validated that query logging is a first-class product-signal source.</p>
+
+        <h3 class="text-sm font-semibold text-gray-900 mt-6 mb-3">What worked</h3>
+        <ul class="space-y-2">
+          <li><strong>Honesty contract holds.</strong> No fabrication detected post-launch.</li>
+          <li><strong>Soft-launch bet was correct.</strong> Production system to test against without exposing gaps to the target audience.</li>
+          <li><strong>Eval harness catches things missed by eye.</strong> Example: "no contractions" rule over-applied to possessive apostrophe-s.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-sm font-semibold text-indigo-400 uppercase tracking-widest mb-4">What I'd Do Differently</h2>
+        <ul class="space-y-4">
+          <li><strong>Distribution is the actual unsolved problem.</strong> The agent only helps if I clear the ATS and recruiter screen first. Would design the distribution model in from day one.</li>
+          <li><strong>Build the eval harness in Phase 1, not Phase 2.</strong> Shipped product first, built eval framework after. Right for launch speed, wrong for iteration speed.</li>
+          <li><strong>Wider fact-audit up front.</strong> Systematic pass at ingestion (cite the source for every number in a comment) would have been faster than the incident-driven audit.</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 mt-20">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-sm">
+      <span>Justin Schaeffer</span>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com/in/justinmschaeffer" target="_blank" rel="noopener" class="hover:text-white transition-colors">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
